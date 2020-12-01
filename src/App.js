@@ -5,17 +5,11 @@ import { useState } from 'react';
 function App() {
   const [myPkmns, setMyPkmns] = useState([]);
   const myHadler = () => {
-    fetch("https://pokeapi.co/api/v2/pokemon")
+    fetch("https://pokeapi.co/api/v2/pokemon/?limit=807")
       .then(response => {
         return response.json();
       }).then(response => {
         setMyPkmns(response.results);
-        // fetch("https://pokeapi.co/api/v2/pokemon")
-        // .then(response => {
-        //   return response.json();
-        // }).then(response => {
-        //   setMyPkmns(response.ability);
-        //   console.log(response);
       }).catch(err => {
         console.log(err);
       });
@@ -40,7 +34,7 @@ function App() {
         </div>
         <div className="row mt-5">
           <div className="col-4"></div>
-          <div className="col-4"><ul>{
+          <div className="col-4" ><ul>{
             myPkmns.map((item, i) =>
               <li key={i} onClick={e => myHadler}>{item.name}</li>
             )
