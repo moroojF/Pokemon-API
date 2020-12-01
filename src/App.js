@@ -36,13 +36,11 @@ function App() {
           <div className="col-4"></div>
           <div className="col-4" ><ul>{
             myPkmns.map((item, i) =>
-              <li key={i} onClick={e => myHadler}>{item.name}</li>
+              <li key={i}>{item.name}</li>
             )
           }</ul></div>
           <div className="col-4"></div>
-
         </div>
-
       </div>
     </>
   );
